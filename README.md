@@ -151,7 +151,7 @@ the trivial rule "predict each organisation's dominant grade" scores 0.988
 accuracy on the same split, because each client is 95–99.9% single-class and
 `OrgId` is an input feature. Removing the identifiers and splitting by
 `IncidentId` drops the same configuration to 0.6704, a difference of **0.3133
-macro-F1**. Both are in `results/`.
+macro-F1**.
 
 **BOTSv3 stratified scores are not trustworthy.** All 22,469 positives come from
 ~6 indicator entities, so a row-level random split puts packets from the same
@@ -242,9 +242,11 @@ src/exp/      moe_run.py       centralised: LightGBM vs Mamba vs MoE-Mamba
               fed_retry.py     retry supervisor (resumes across crashes)
               fed_chain.py     run datasets sequentially
 src/fed/      fed_core.py      aggregation strategies
-results/      every metric behind the tables (JSON + CSV)
 figures/      the five figures used in this README
 ```
+
+Each experiment script writes its own metrics to `results/` and figures to
+`figures_*/` when run; those outputs are not committed here.
 
 ## Usage
 
