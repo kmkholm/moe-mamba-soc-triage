@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+*.pt
+*.npz
+*.log
+.ipynb_checkpoints/
+.venv/
+env/
+_fed_ckpt/
